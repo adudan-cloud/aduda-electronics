@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Website</title>
+  <link rel="stylesheet" href="static/images/style.css">
+  
+<body>
+
+  <header>
+    <h1>Welcome</h1>
+    <nav>
+      <li><a href="{% url 'about' %}">About</a></li>
+      <li><a href="{% url 'laptop' %}">Laptop</a></li>
+      <li><a href="{% url 'reviews' %}">Reviews</a></li>
+      <li><a href="{% url 'accessories' %}">Accessories</a></li>
+      <li></li><a href="{% url 'contact' %}">Contact</a></li>
+      <li><a href="{% url 'login' %}">Login/Register</a></li>
+
+
+    </nav>
+  </header>
+  </main>
+  <footer>
+    <p>&copy; 2025 My Website</p>
+  </footer>
+</body>
+</html>

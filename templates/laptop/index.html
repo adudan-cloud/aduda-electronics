@@ -1,0 +1,42 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My website</title>
+  <script src="{% static 'laptop/js/reviews-script.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'images/laptop-style.css' %}">
+</head>
+<body>
+
+  <header>
+    <h1>Welcome</h1>
+    <nav>
+      <ul>
+        <li><a href="{% url 'home' %}">home</a></li>
+         <li><a href="{% url 'about' %}">About</a></li>
+         <li><a href="{% url 'laptop' %}">Laptop</a></li>
+         <li><a href="{% url 'reviews' %}">Reviews</a></li>
+         <li><a href="{% url 'accessories' %}">Accessories</a></li>
+         <li><a href="{% url 'contact' %}">Contact</a></li>
+         <li><a href="{% url 'login' %}">Login/Register</a></li>
+         
+
+
+    </ul>
+    
+    </nav>
+  </header>
+  <main>
+  <section>
+    <h2>Welcome to Aduda Electronics</h2>
+    <p>Your one-stop shop for laptops, accessories, and tech reviews.</p>
+    <a href="{% url 'laptop' %}">Browse Laptops</a>
+  </section>
+</main>
+
+  <footer>
+    <p>&copy; 2025 My Website</p>
+  </footer>
+</body>
+</html>

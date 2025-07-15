@@ -1,0 +1,119 @@
+ {% load static%}
+ 
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Brands - TechHub</title>
+    <link rel="stylesheet" href=" laptop-style.css"> </head>
+<body>
+
+    <header class="header">
+        <div class="header-content">
+            <h1 class="site-title"><a href="home.html">TechHub</a></h1>
+            <p class="site-slogan">Your one-stop shop for the latest laptops!</p>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="{% url 'home'  %}">home</a></li>
+                     <li><a href="{% url 'about' %}">About</a></li>
+                     <li><a href="{% url 'reviews' %}">Reviews</a></li>
+                     <li><a href="{% url 'accessories' %}">Accessories</a></li>
+                     <li></li><a href="{% url 'contact' %}">Contact</a></li>
+                     <li><a href="{% url 'login' %}">Login/Register</a></li>
+                </ul>
+            </nav>
+
+            <div class="search-bar">
+                <input type="search" id="search-input" placeholder="Search for laptops or brands...">
+                <button type="submit" id="search-button">Search</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>Explore All Laptop Models & Brands</h2>
+        <div class="brand-grid">
+            <div class="brand-card">
+                <img src="{%static 'laptop\css\images\HP LOGO640_hp.jpg'%}" alt="HP Laptop Logo">
+                <h3>HP</h3>
+                <p>Discover HP's versatile range of Pavilion, Envy, and Spectre laptops.</p>
+            </div>
+            <div class="brand-card">
+                <img src="{%static 'laptop\css\images\DELL LOGO(1).webp'%}" alt="Dell Laptop Logo">
+                <h3>Dell</h3>
+                <p>Browse Dell's powerful XPS, Inspiron, and Alienware gaming laptops.</p>
+            </div>
+            <div class="brand-card">
+                <img src="{%static 'laptop\css\images\Lenovo-Logo-1.png'%}" alt="Lenovo Laptop Logo">
+                <h3>Lenovo</h3>
+                <p>Find robust ThinkPads, Yoga convertibles, and IdeaPad series from Lenovo.</p>
+            </div>
+            <div class="brand-card">
+                <img src="{%static 'laptop\css\images\APPLE LOGO.png'%}" alt="Apple Laptop Logo">
+                <h3>Apple</h3>
+                <p>Experience the seamless performance of MacBook Air and MacBook Pro.</p>
+            </div>
+            <div class="brand-card">
+                <img src="{%static 'laptop\css\images\ACER LOGO.webp'%}" alt="Acer Laptop Logo">
+                <h3>Acer</h3>
+                <p>Check out Acer's affordable Aspire, Swift, and powerful Predator gaming series.</p>
+            </div>
+            <div class="brand-card">
+                <img src="{%static 'laptop\css\images\asus_logo.png'%}" alt="Asus Laptop Logo">
+                <h3>Asus</h3>
+                <p>Explore Asus's innovative ZenBook, ROG gaming, and VivoBook lines.</p>
+            </div>
+             <div class="brand-card">
+                <img src="{%static 'laptop\css\images\microfost logo (1).webp'%}" alt="Microsoft  Laptop Logo">
+                <h3>Microsoft Surface</h3>
+                <p>Sleek and versatile devices designed by Microsoft.</p>
+            </div>
+            <div class="brand-card">
+                <img src="{%static 'laptop\css\images\razer logo.png'%}" alt="Razer Laptop Logo">
+                <h3>Razer</h3>
+                <p>High-performance gaming laptops with iconic design.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 TechHub. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Optional: Add a simple client-side search functionality for filtering brand cards
+        document.getElementById('search-button').addEventListener('click', function() {
+            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+            const brandCards = document.querySelectorAll('.brand-card');
+
+            brandCards.forEach(card => {
+                const brandName = card.querySelector('h3').textContent.toLowerCase();
+                const description = card.querySelector('p').textContent.toLowerCase();
+
+                if (brandName.includes(searchTerm) || description.includes(searchTerm)) {
+                    card.style.display = 'flex'; // Show the card
+                } else {
+                    card.style.display = 'none'; // Hide the card
+                }
+            });
+
+            if (searchTerm === "") {
+                brandCards.forEach(card => {
+                    card.style.display = 'flex'; // Show all if search cleared
+                });
+            }
+        });
+
+        // Add functionality to clear search when input is empty
+        document.getElementById('search-input').addEventListener('keyup', function(event) {
+            if (event.key === 'Enter' || this.value === '') {
+                document.getElementById('search-button').click(); // Trigger search on Enter or if cleared
+            }
+        });
+    </script>
+
+</body>
+</html>

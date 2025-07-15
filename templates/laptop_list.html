@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Laptop List</title>
+</head>
+<body>
+    <h1>Available Laptops</h1>
+    <ul>
+        {% for laptop in laptops %}
+            <li>{{ laptop.name }} - Ksh {{ laptop.price }}</li>
+        {% empty %}
+            <li>No laptops available.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
